@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Patil | Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="h-screen w-full p-6 flex flex-col justify-between">
+
+    <nav class="flex justify-between items-start utility-text relative z-50">
+        <div class="flex gap-12">
+            <span>Shri Patil, SNP</span>
+            
+            <div class="relative group cursor-pointer">
+                <span id="timer-display">■ --:--:-- IST (Kolhapur)</span>
+                
+                <div class="clock-overlay absolute top-6 left-0 w-32 h-32 bg-black border border-white rounded-full hidden group-hover:flex items-center justify-center shadow-2xl">
+                    <div class="relative w-28 h-28 border border-gray-800 rounded-full">
+                        <div id="hour-hand" class="hand w-1 h-8 bg-white"></div>
+                        <div id="min-hand" class="hand w-0.5 h-12 bg-white"></div>
+                        <div id="sec-hand" class="hand w-px h-12 bg-green-500"></div>
+                        <div class="center-dot absolute w-2 h-2 bg-white rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute left-1/2 -translate-x-1/2">+</div>
+
+        <div class="flex gap-12">
+            <a href="#" class="underline">View Work</a>
+            <span id="session-timer">▶ 00:00:00</span>
+            <button id="reset-session" class="border border-black px-2 py-0.5 hover:bg-black hover:text-white transition-colors">✕</button>
+        </div>
+    </nav>
+
+    <main id="home-section" class="page-section flex-grow flex flex-col justify-center items-center text-center">
+        <div class="relative group"     onclick="showSection('home-section')">
+            <span class="nav-number">(01)</span>
+            <h1 class="massive-text cursor-pointer">HOME</h1>
+        </div>
+        <div class="relative group">
+            <span class="nav-number">(02)</span>
+            <a href="projects.html" class="block">
+                <h1 class="massive-text cursor-pointer">PROJECTS</h1>
+            </a>
+        </div>
+        <div class="relative group">
+            <span class="nav-number">(03)</span>
+            <a href="skills.html" class="block">
+                <h1 class="massive-text cursor-pointer">SKILLS</h1>
+            </a>
+        </div>
+        <div class="relative group" onclick="showSection('about-section')">
+            <span class="nav-number">(04)</span>
+            <h1 class="massive-text cursor-pointer">ABOUT</h1>
+        </div>
+    </main>
+
+    <section id="projects-section" class="page-section hidden flex-grow flex flex-col justify-center items-center">
+        <h2 class="massive-text mb-8">WORKS</h2>
+        
+        <div id="video-container" class="relative w-64 h-64 md:w-80 md:h-80 bg-black border-2 border-white overflow-hidden cursor-pointer group transition-transform hover:scale-105">
+            <video id="project-video" class="w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500" muted loop playsinline>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <div class="absolute inset-0 flex items-center justify-center group-hover:hidden">
+                <span class="utility-text text-white">Preview Project</span>
+            </div>
+        </div>
+
+        <p class="utility-text mt-8">Automated Billing System / Cloud Data / Retail UI</p>
+        <button onclick="showSection('home-section')" class="mt-8 border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">BACK</button>
+    </section>
+
+    <section id="skills-section" class="page-section hidden flex-grow flex flex-col justify-center items-center">
+        <h2 class="massive-text">SKILLS</h2>
+        <div class="grid grid-cols-2 gap-8 mt-4 utility-text">
+            <span>C / Embedded Systems</span>
+            <span>Digital Logic / Microprocessors</span>
+            <span>Tailwind / Web Dev</span>
+            <span>System Architecture</span>
+        </div>
+        <button onclick="showSection('home-section')" class="mt-8 border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">BACK</button>
+    </section>
+
+    <section id="about-section" class="page-section hidden flex-grow flex flex-col justify-center items-center">
+        <h2 class="massive-text">INFO</h2>
+        <p class="max-w-md text-center mt-4">Focused on the intersection of hardware synchronization and modern software interfaces.</p>
+        <button onclick="showSection('home-section')" class="mt-8 border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">BACK</button>
+    </section>
+
+    <footer class="flex justify-between items-end utility-text">
+        <div>LA_NJ_CHI_</div>
+        <div class="absolute left-1/2 -translate-x-1/2 lowercase">Instagram</div>
+        <a href="contact.html" class="hover:underline cursor-pointer">Get In Touch</a>
+    </footer>
+
+    <div class="overlay-left fixed left-4 top-1/2 -translate-y-1/2 flex flex-col gap-24 utility-text -rotate-90 origin-left opacity-40">
+        <span>ISO 1600</span>
+        <span>R3D HQ</span>
+    </div>
+
+    <div class="overlay-right fixed right-4 top-1/2 -translate-y-1/2 flex flex-col gap-24 utility-text rotate-90 origin-right opacity-40">
+        <span>FPS: 24</span>
+        <span>AR 2.39:1</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

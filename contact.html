@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Shri Patil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4; /* Light Grey/White */
+            color: #1a1a1a;
+        }
+        .profile-image {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+        .profile-image:hover {
+            filter: grayscale(0%);
+        }
+        .utility-text {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-10">
+
+    <nav class="flex justify-between utility-text mb-20">
+        <a href="index.html" class="hover:underline">← BACK TO INDEX</a>
+        <span>EST. 2026</span>
+    </nav>
+
+    <main class="flex flex-col md:flex-row gap-20 items-center justify-center flex-grow">
+        <div class="w-80 h-[450px] bg-zinc-300 overflow-hidden shadow-2xl">
+            <img src="profile.jpg" alt="Shri Patil" class="profile-image w-full h-full object-cover">
+        </div>
+
+        <div class="max-w-lg">
+            <span class="utility-text text-green-700">Digital Systems Developer</span>
+            <h1 class="text-7xl font-bold tracking-tighter mt-4 mb-8">SHRI PATIL</h1>
+            
+            <div class="space-y-6 text-lg leading-relaxed">
+                <p>Focused on microprocessors, hardware synchronization, and building automated retail systems.</p>
+                
+                <div class="pt-10 border-t border-zinc-300">
+                    <p class="utility-text opacity-50 mb-2">Primary Contact</p>
+                    <a href="mailto:shreepatil3634@gmail.com" class="text-2xl hover:underline">shreepatil3634@gmail.com</a>
+                </div>
+
+                <div class="pt-4">
+                    <p class="utility-text opacity-50 mb-2">Location</p>
+                    <p class="text-xl">Kolhapur, India (IST)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-20 flex justify-between utility-text opacity-40">
+        <span>Connect: LinkedIn / Instagram</span>
+        <span>Availability: Open for Collaboration</span>
+    </footer>
+
+</body>
+</html>

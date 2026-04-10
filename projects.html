@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works | Shri Patil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505; /* New Background: Darker/Noir */
+            color: white; /* Text color changed to white for contrast */
+            overflow-x: hidden;
+        }
+
+        .video-box {
+            width: 400px;
+            height: 400px;
+            background: #111;
+            border: 1px solid #333;
+            transition: all 0.5s ease;
+        }
+
+        .video-box:hover {
+            border-color: #0b6e3f; /* Hover back to the green theme */
+            transform: scale(1.02);
+        }
+
+        .utility-text {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        /* Inside projects.html <style> tag */
+        body {
+            background-color: #000000 !important; /* Forces black background */
+            color: #ffffff !important;           /* Forces white text */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Make the title massive and white */
+        .featured-title {
+            font-size: clamp(4rem, 15vw, 12rem);
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            color: white;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-12 flex flex-col justify-between">
+
+    <nav class="flex justify-between utility-text">
+        <a href="index.html" class="hover:underline">← Return Home</a>
+        <span>Archive 2026</span>
+    </nav>
+
+    <main class="flex flex-col items-center justify-center flex-grow py-20">
+        <h1 class="text-8xl font-bold tracking-tighter mb-12">FEATURED</h1>
+
+        <div id="video-trigger" class="video-box relative cursor-pointer group">
+            <video id="p-video" class="w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity" muted loop playsinline>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            </video>
+            
+            <div class="absolute inset-0 flex items-center justify-center group-hover:hidden">
+                <p class="utility-text opacity-50">Hover to play preview</p>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <h2 class="text-2xl font-bold">Automated Retail System</h2>
+            <p class="utility-text mt-2 text-gray-400">Digital Systems / Cloud Integration</p>
+        </div>
+    </main>
+
+    <footer class="flex justify-between utility-text opacity-30">
+        <span>SN_P_01</span>
+        <span>Built with Tailwind</span>
+    </footer>
+
+    <script>
+        const trigger = document.getElementById('video-trigger');
+        const video = document.getElementById('p-video');
+
+        trigger.addEventListener('mouseenter', () => video.play());
+        trigger.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+        });
+    </script>
+</body>
+</html>

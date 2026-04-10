@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Shri Patil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: white; /* Pure black */
+            color: #000;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .skill-panel {
+            position: relative;
+            flex: 1;
+            height: 100vh;
+            overflow: hidden;
+            border-right: 1px solid #1a1a1a;
+            transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+
+        /* Hover effect: The side you touch expands slightly */
+        .skill-panel:hover {
+            flex: 1;
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            opacity: 0.3; /* Dimmed until hover */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .skill-panel:hover .video-bg {
+            opacity: 1;
+            transform: scale(1.00);
+        }
+
+        .utility-text {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .label {
+            position: absolute;
+            bottom: 10%;
+            left: 30%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 20;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="flex flex-row">
+
+    <nav class="fixed top-6 left-6 z-50 utility-text">
+        <a href="index.html" class="hover:text-green-500">← EXIT</a>
+    </nav>
+
+    <div class="skill-panel group" id="panel-1">
+        <video id="video-1" class="video-bg" muted loop playsinline>
+            <source src="theDebug.mp4" type="video/mp4">
+        </video>
+        <div class="label">
+            <span class="utility-text text-green-500 mb-2 block">DEPT_01</span>
+            <h2 class="text-6xl font-black">DEBUG</h2>
+            <p class="utility-text opacity-40 mt-4 text-[10px]">Complex program / Logic </p>
+        </div>
+    </div>
+
+    <div class="skill-panel group" id="panel-2">
+        <video id="video-2" class="video-bg" muted loop playsinline>
+            <source src="thepath.mp4" type="video/mp4">
+        </video>
+        <div class="label">
+            <span class="utility-text text-green-500 mb-2 block">DEPT_02</span>
+            <h2 class="text-6xl font-black">Code Tracing</h2>
+            <p class="utility-text opacity-40 mt-4 text-[10px]">C Programming</p>
+        </div>
+    </div>
+
+    <script>
+        const setupPanel = (panelId, videoId) => {
+            const panel = document.getElementById(panelId);
+            const video = document.getElementById(videoId);
+
+            panel.addEventListener('mouseenter', () => video.play());
+            panel.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+        };
+
+        setupPanel('panel-1', 'video-1');
+        setupPanel('panel-2', 'video-2');
+    </script>
+</body>
+</html>
