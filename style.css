@@ -17,6 +17,7 @@ body {
     line-height: 0.85;
     font-weight: 700;
     letter-spacing: -0.02em;
+    color: white;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
